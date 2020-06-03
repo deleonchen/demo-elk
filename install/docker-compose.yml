@@ -68,6 +68,17 @@ services:
       ELASTICSEARCH_URL: http://es01:9200
       ELASTICSEARCH_HOSTS: http://es01:9200
     networks:
+      - elastic
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.7.0
+    container_name: logstash
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    ports:
+      - 9600:9600
+    volumes:
+      - /root/mydev/logstash/pipeline:/usr/share/logstash/pipeline/
+    networks:
       - elastic  
 networks:
   elastic:
