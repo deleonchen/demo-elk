@@ -1,3 +1,8 @@
 http.host: "0.0.0.0"
 config.reload.automatic: true
-xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+# Enable for detailed logging to console
+#path.logs: "/usr/share/logstash/logs"
+#log.level: debug
+#config.debug: true
+#pipeline.separate_logs: true
+#xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
